@@ -3,32 +3,62 @@ const injectInterface = () => {
 
     const targetInput = document.getElementById('nsfw-consent-toggle');
     if (!targetInput) return;
-    const targetRow = targetInput.closest('.settings-toggle')?.parentElement;
+
+    // Берём строку настройки
+    const targetRow = targetInput.closest('.settings-row')
+        || targetInput.closest('.settings-toggle')?.parentElement;
+
+    if (!targetRow) return;
+
+    // Контейнер всех настроек
+    const settingsContainer = targetRow.parentElement;
+    if (!settingsContainer) return;
 
     const wrapper = document.createElement('div');
     wrapper.id = 'ext-custom-settings';
-    // wrapper.style.cssText = 'margin-top: 15px; border-top: 1px solid #333; padding-top: 15px;';
 
     wrapper.innerHTML = `
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
-            <span class="settings-row-label">Кастомная тема</span>
-            <label class="settings-toggle"><input type="checkbox" id="ext-master-switch"><span class="settings-toggle-slider"></span></label>
-        </div>
-        <div id="ext-controls-group" style="display: flex; flex-direction: column; gap: 10px;">
-            <input type="color" id="ext-color" title="Цвет фона" style="width: 100%; height: 30px; cursor: pointer; border: none; border-radius: 4px; background: none; box-sizing: border-box;">
-            <input type="text" id="ext-url" placeholder="URL картинки фона" style="width: 100%; padding: 8px; background: #111; color: #fff; border: 1px solid #444; border-radius: 4px; font-size: 12px; box-sizing: border-box;">
-            <button id="ext-reset-all" style="width: 100%; padding: 8px; background: #444; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 12px; box-sizing: border-box;">Сбросить всё</button>
-        </div>
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; margin-top: 15px; border-top: 1px solid #333; padding-top: 15px;">
-            <div class="settings-row-info">
-                <span class="settings-row-label">Живые превью</span>
-                <span class="settings-row-desc">Видео при наведении</span>
-            </div>
-            <label class="settings-toggle"><input type="checkbox" id="ext-preview-switch"><span class="settings-toggle-slider"></span></label>
-        </div>
-    `;
+    <div style="font-size:12px; color:#888; margin: 20px 0 8px 0; text-transform:uppercase; letter-spacing: 0.5px;">
+        EbloTweak Дополнения
+    </div>
 
-    targetRow.after(wrapper);
+    <div class="settings-row">
+        <div class="settings-row-info">
+            <span class="settings-row-label">Кастомная тема</span>
+            <div class="settings-row-desc">Включить кастомную тему</div>
+        </div>
+        <label class="settings-toggle">
+            <input type="checkbox" id="ext-master-switch">
+            <span class="settings-toggle-slider"></span>
+        </label>
+    </div>
+
+    <div id="ext-controls-group" style="display:flex; flex-direction:column; gap:10px; padding: 12px 0; border-bottom: 1px solid #ffffff11;">
+        <input type="color" id="ext-color" title="Цвет фона"
+            style="width:100%; height:32px; cursor:pointer; border:1px solid #444; border-radius:6px; background:#111; padding:2px; box-sizing:border-box;">
+
+        <input type="text" id="ext-url" placeholder="URL картинки фона"
+            style="width:100%; padding:10px; background:#111; color:#fff; border:1px solid #444; border-radius:6px; font-size:13px; box-sizing:border-box;">
+    </div>
+
+    <div class="settings-row">
+        <div class="settings-row-info">
+            <span class="settings-row-label">Живые превью</span>
+            <div class="settings-row-desc">Воспроизводить видео при наведении</div>
+        </div>
+        <label class="settings-toggle">
+            <input type="checkbox" id="ext-preview-switch">
+            <span class="settings-toggle-slider"></span>
+        </label>
+    </div>
+
+    <button id="ext-reset-all"
+        style="width:100%; margin-top:8px; padding:10px;">
+        Сбросить дополнительные настройки
+    </button>
+`;
+
+    settingsContainer.appendChild(wrapper);
     setupEventListeners();
 };
 
