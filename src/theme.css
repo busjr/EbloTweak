@@ -256,6 +256,7 @@
 :root.ext-enabled .notif-mark-read-btn,
 :root.ext-enabled .notif-filter-btn,
 :root.ext-enabled .filter-dropdown-btn,
+:root.ext-enabled .filter-dropdown-menu,
 :root.ext-enabled .filter-option,
 :root.ext-enabled .nav-btn,
 :root.ext-enabled .nsfw-toggle-btn{
@@ -272,6 +273,7 @@
 :root.ext-enabled .feed-link-btn,
 :root.ext-enabled .filter-dropdown-btn,
 :root.ext-enabled .filter-option,
+:root.ext-enabled .filter-dropdown-menu,
 :root.ext-enabled .notif-mark-read-btn,
 :root.ext-enabled .notif-filter-btn,
 :root.ext-enabled .nsfw-toggle-btn,
@@ -361,4 +363,247 @@
 :root.ext-enabled textarea::placeholder{
   color: var(--ext-accent-text) !important;
   opacity: 0.7;
+}
+
+:root.ext-enabled .filter-dropdown-menu{
+  background: var(--ext-surface) !important;
+  border: 1px solid var(--ext-border) !important;
+  box-shadow: none !important;
+}
+
+:root.ext-enabled .filter-dropdown-menu .filter-option{
+  background: transparent !important;
+  color: var(--ext-accent-text) !important;
+  border: 1px solid var(--ext-btn-border) !important;
+}
+
+:root.ext-enabled .filter-dropdown-menu .filter-option:hover{
+  background: rgba(0,0,0,0.25) !important;
+  border-color: var(--ext-accent-text) !important;
+}
+
+:root.ext-enabled .filter-dropdown-menu .filter-option.active{
+  background: var(--ext-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--ext-accent) !important;
+}
+
+:root.ext-enabled .post-card,
+:root.ext-enabled .preview-content,
+:root.ext-enabled #page-wrap,
+:root.ext-enabled .preview-wrapper{
+  background: transparent !important;
+  color: var(--ext-accent-text) !important;
+}
+
+:root.ext-enabled .post-card,
+:root.ext-enabled .comments-section,
+:root.ext-enabled .comment-item,
+:root.ext-enabled .comments-sort-menu,
+:root.ext-enabled .comment-input-wrap,
+:root.ext-enabled .comment-input,
+:root.ext-enabled .comment-form{
+  background: var(--ext-surface) !important;
+  border-color: var(--ext-border) !important;
+}
+
+:root.ext-enabled .post-card *:not(.seven-tv-painted):not([data-seventv-applied="1"]),
+:root.ext-enabled .comments-section *:not(.seven-tv-painted):not([data-seventv-applied="1"]){
+  color: var(--ext-accent-text) !important;
+}
+
+:root.ext-enabled .author-date,
+:root.ext-enabled .comment-time,
+:root.ext-enabled .stat-value-muted,
+:root.ext-enabled .feed-card-author-date,
+:root.ext-enabled .comments-title span,
+:root.ext-enabled #comments-total{
+  color: var(--ext-muted) !important;
+}
+
+:root.ext-enabled .vote-btn,
+:root.ext-enabled .comment-vote-btn,
+:root.ext-enabled .action-btn,
+:root.ext-enabled .comment-submit-btn,
+:root.ext-enabled .comments-sort-btn,
+:root.ext-enabled .comment-reply-btn,
+:root.ext-enabled .comment-edit-btn,
+:root.ext-enabled .comment-delete-btn{
+  background: transparent !important;
+  border: 1px solid var(--ext-btn-border) !important;
+  color: var(--ext-accent-text) !important;
+}
+
+:root.ext-enabled .vote-btn svg,
+:root.ext-enabled .comment-vote-btn svg,
+:root.ext-enabled .action-btn svg,
+:root.ext-enabled .comment-submit-btn svg,
+:root.ext-enabled .comments-sort-btn svg,
+:root.ext-enabled .comment-reply-btn svg,
+:root.ext-enabled .comment-edit-btn svg,
+:root.ext-enabled .comment-delete-btn svg{
+  stroke: currentColor !important;
+}
+
+:root.ext-enabled .vote-score,
+:root.ext-enabled .comment-score,
+:root.ext-enabled .stat-value{
+  color: var(--ext-accent-text) !important;
+}
+
+:root.ext-enabled .action-btn.action-danger{
+  border-color: var(--ext-btn-border) !important;
+}
+
+:root.ext-enabled .comment-input{
+  background: var(--ext-surface-2) !important;
+  border: 1px solid var(--ext-border) !important;
+  color: var(--ext-accent-text) !important;
+}
+
+:root.ext-enabled .comment-input::placeholder{
+  color: var(--ext-muted) !important;
+}
+
+:root.ext-enabled .comment-submit-btn:disabled{
+  opacity: 0.55 !important;
+  filter: none !important;
+}
+
+:root.ext-enabled .comments-sort-menu{
+  background: var(--ext-surface) !important;
+  border: 1px solid var(--ext-border) !important;
+}
+
+:root.ext-enabled .comments-sort-menu .sort-option{
+  background: transparent !important;
+  border: 1px solid var(--ext-btn-border) !important;
+  color: var(--ext-accent-text) !important;
+}
+
+:root.ext-enabled .comments-sort-menu .sort-option:hover{
+  background: rgba(0,0,0,0.25) !important;
+  border-color: var(--ext-accent-text) !important;
+}
+
+
+:root.ext-enabled .comment-actions{
+  background: transparent !important;
+}
+
+:root.ext-enabled .interaction-panel{
+  background: transparent !important;
+}
+
+:root.ext-enabled .interaction-panel .stat-group svg{
+  stroke: currentColor !important;
+}
+
+:root.ext-enabled .edit-pencil-btn svg path,
+:root.ext-enabled .save-btn svg path{
+  fill: currentColor !important;
+}
+
+:root.ext-enabled .private-badge{
+  border: 1px solid var(--ext-btn-border) !important;
+  background: transparent !important;
+  color: var(--ext-accent-text) !important;
+}
+
+:root.ext-enabled .comment-author-name{
+  color: var(--ext-accent-text) !important;
+  text-decoration-color: var(--ext-accent-text) !important;
+}
+
+:root.ext-enabled .post-card,
+:root.ext-enabled #comments-section,
+:root.ext-enabled #comments-section *{
+  color: var(--ext-accent-text) !important;
+}
+
+:root.ext-enabled #comments-section .seven-tv-painted,
+:root.ext-enabled #comments-section [data-seventv-applied="1"]{
+  color: inherit !important;
+}
+
+:root.ext-enabled .post-card,
+:root.ext-enabled .comments-section,
+:root.ext-enabled .comment-item,
+:root.ext-enabled .comments-sort-menu,
+:root.ext-enabled .comment-input-wrap,
+:root.ext-enabled .comment-input,
+:root.ext-enabled .comment-form,
+:root.ext-enabled .interaction-panel{
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+:root.ext-enabled .vote-btn,
+:root.ext-enabled .comment-vote-btn,
+:root.ext-enabled .action-btn,
+:root.ext-enabled .comment-submit-btn,
+:root.ext-enabled .comments-sort-btn,
+:root.ext-enabled .comment-reply-btn,
+:root.ext-enabled .comment-edit-btn,
+:root.ext-enabled .comment-delete-btn,
+:root.ext-enabled .comments-sort-menu .sort-option{
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+:root.ext-enabled .comment-input{
+  border: 0 !important;
+  box-shadow: none !important;
+  background: var(--ext-surface-2) !important;
+}
+
+:root.ext-enabled .comment-input::placeholder{
+  color: var(--ext-muted) !important;
+}
+
+:root.ext-enabled .vote-btn,
+:root.ext-enabled .comment-vote-btn,
+:root.ext-enabled .action-btn,
+:root.ext-enabled .comment-submit-btn,
+:root.ext-enabled .comments-sort-btn,
+:root.ext-enabled .comment-reply-btn,
+:root.ext-enabled .comment-edit-btn,
+:root.ext-enabled .comment-delete-btn{
+  color: var(--ext-accent-text) !important;
+  background: transparent !important;
+}
+
+:root.ext-enabled .vote-btn svg,
+:root.ext-enabled .comment-vote-btn svg,
+:root.ext-enabled .action-btn svg,
+:root.ext-enabled .comment-submit-btn svg,
+:root.ext-enabled .comments-sort-btn svg,
+:root.ext-enabled .comment-reply-btn svg,
+:root.ext-enabled .comment-edit-btn svg,
+:root.ext-enabled .comment-delete-btn svg{
+  stroke: currentColor !important;
+}
+
+:root.ext-enabled #scroll-to-comments-btn svg{
+  stroke: currentColor !important;
+}
+
+:root.ext-enabled .edit-pencil-btn svg path,
+:root.ext-enabled .save-btn svg path{
+  fill: currentColor !important;
+}
+
+:root.ext-enabled .comments-section,
+:root.ext-enabled .centered-form.preview-wrapper{
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: 0 !important;
+}
+
+:root.ext-enabled .author-date,
+:root.ext-enabled .comment-time,
+:root.ext-enabled .stat-value-muted{
+  color: var(--ext-muted) !important;
 }
