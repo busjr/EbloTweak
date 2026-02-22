@@ -8,7 +8,7 @@ EbloTweak (Дополнительные настройки для Eblo.id)
 
 ### Скачайте [архив](https://github.com/busjr/EbloTweak/releases) и распакуйте в удобном месте, укажите папку с расширением в:
 
-> [!WARNING]  
+> [!WARNING]
 > Не удаляйте и не перемещайте эту папку после установки, иначе расширение перестанет работать
 
 ### Chrome
@@ -30,4 +30,9 @@ EbloTweak (Дополнительные настройки для Eblo.id)
 - Перейдите в ```about:addons```
 - Нажмите на шестеренку и выберите "Установить дополнение из файла..."
 - Выберите заранее упакованный архив (zip) расширения
+
+# Соавторы
+<a href="https://github.com/busjr/EbloTweak/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=busjr/EbloTweak" />
+</a>
 
