@@ -1,7 +1,14 @@
 {
     "manifest_version": 3,
-    "name": "EbloTweak (Дополнительные настройки для Eblo.id)",
+    "name": "EbloTweak",
+    "description": "Дополнительные настройки для Eblo.id",
     "version": "2.2",
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "eblotweak@eblo.id",
+            "update_url": "https://busjr.github.io/EbloTweak.github.io/updates.json"
+        }
+    },
     "permissions": [
         "storage"
     ],
