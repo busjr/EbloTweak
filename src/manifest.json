@@ -3,7 +3,7 @@
     "name": "EbloTweak",
     "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp671T8DeMJ+F6Mf0cyrmH21cm2+vhWs+ldmFtHDL7wi/Lf0C4THWK7P2HR0l5Z0WRJU8p5ZECn4f40XmavgkHshjrxIY9+0lJigDbNIn9p0ncBSikXYfM9CgHfcQCgcVIybqMeSInl8W7w6496W37oAiW/A7tI7F5bp8o9TCk9Qv82FmNo+1uehT0kYsMZv1U7BXYzZC7lFL64edhLut+QI4MKuztmrnpLVe0YDjfT9xsyP4wgpnar3CnRZHcbdXdhmwc3SNBCrOifMN36imT+fs0RKWDUPb50rXX/qCknW34SAoC15Y+nfg7PRHsS79rBgSXkIYNW9kgv2wMXLH8wIDAQAB",
     "description": "Дополнительные настройки для Eblo.id",
-    "version": "2.2",
+    "version": "2.3",
     "update_url": "https://busjr.github.io/EbloTweak.github.io/chrome_updates.xml",
     "browser_specific_settings": {
         "gecko": {
