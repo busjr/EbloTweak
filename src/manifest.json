@@ -1,13 +1,15 @@
 {
     "manifest_version": 3,
     "name": "EbloTweak",
+    "key": "lhajlkkiaacejbmmenfigmlbgghmphbo",
     "description": "Дополнительные настройки для Eblo.id",
     "version": "2.2",
     "update_url": "https://busjr.github.io/EbloTweak.github.io/chrome_updates.xml",
     "browser_specific_settings": {
         "gecko": {
             "id": "eblotweak@eblo.id",
-            "update_url": "https://busjr.github.io/EbloTweak.github.io/updates.json"
+            "update_url": "https://busjr.github.io/EbloTweak.github.io/updates.json",
+            "data_collection_permissions": false
         }
     },
     "permissions": [
