@@ -38,9 +38,13 @@
     const wrapper = document.createElement("div");
     wrapper.id = "ext-custom-settings";
 
+    // получаем версию
+    const manifestData = chrome.runtime.getManifest();
+    const version = manifestData.version;
+
     wrapper.innerHTML = `
       <div style="font-size:12px; color:#888; margin: 20px 0 8px 0; text-transform:uppercase; letter-spacing: 0.5px;">
-          EbloTweak Дополнения
+          EbloTweak Дополнения v${version}
       </div>
 
       <div class="settings-row">
