@@ -44,7 +44,7 @@
 
     wrapper.innerHTML = `
       <div style="font-size:12px; color:#888; margin: 20px 0 8px 0; text-transform:uppercase; letter-spacing: 0.5px;">
-          EbloTweak Дополнения v${version}
+          EbloTweak Дополнения ver${version}
       </div>
 
       <div class="settings-row">
