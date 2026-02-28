@@ -1,7 +1,7 @@
 # EbloTweak
 EbloTweak (Дополнительные настройки для Eblo.id)
 
-![Версия](https://img.shields.io/github/v/release/busjr/EbloTweak?style=for-the-badge&color=blue)
+![Версия](https://img.shields.io/github/v/release/busjr/EbloTweak?style=for-the-badge&color=blue&cache=1234)
 ![Скачиваний](https://img.shields.io/github/downloads/busjr/EbloTweak/total?style=for-the-badge&color=green&cache=123)
 
 ## Использование
@@ -34,7 +34,7 @@ EbloTweak (Дополнительные настройки для Eblo.id)
 # Авторы
 - [busjr](https://github.com/busjr)
 - [X1kkan](https://github.com/X1kkan)
-<!-- <a href="https://github.com/busjr/EbloTweak/graphs/contributors">
+<a href="https://github.com/busjr/EbloTweak/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=busjr/EbloTweak" />
-</a> -->
+</a>
 
