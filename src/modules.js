@@ -97,12 +97,14 @@ const AppModules = {
     if (!enabled) return;
 
     window._extEnter = (e) => {
-      const card = e.target.closest(".feed-card");
+      const card = e.target.closest(".feed-card") || e.target.closest(".feed-card-link");
       if (!card || card._hasPreview) return;
 
-      const img = card.querySelector('img[data-full-src*=".mp4"], img[data-full-src*=".mov"]');
+      const img = card.querySelector('img[data-full-src]');
       if (!img) return;
 
+      const videoUrlRaw = img.getAttribute("data-full-src");
+      if (!/\.(mp4|webm|mov|ogv)/i.test(videoUrlRaw)) return;
       card._hasPreview = true;
 
       const cleanup = () => {
@@ -110,7 +112,7 @@ const AppModules = {
         const video = card.querySelector(".ext-preview-video");
         if (video) {
           video.pause();
-          video.src = "";
+          video.removeAttribute('src');
           video.load();
           video.remove();
         }
@@ -123,30 +125,45 @@ const AppModules = {
       card._previewTimeout = setTimeout(() => {
         if (!card._hasPreview) return;
 
-        let videoUrl = img.getAttribute("data-full-src") || "";
-        if (!videoUrl) return;
+        let videoUrl = videoUrlRaw;
         if (videoUrl.startsWith("/")) videoUrl = window.location.origin + videoUrl;
-        videoUrl += "#t=0,10";
-
-        const container = img.closest(".feed-card-preview");
+        const container = card.querySelector(".feed-card-preview") || img.parentElement;
         if (!container) return;
 
         const video = document.createElement("video");
         video.muted = video.defaultMuted = true;
         video.loop = true;
         video.playsInline = true;
-        video.preload = "metadata";
+        video.preload = "none";
         video.className = "ext-preview-video";
-        video.style.cssText = "position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:999;pointer-events:none;border-radius:inherit;background:#000;opacity:0;transition:opacity 0.2s;";
-
+        video.style.cssText = `
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: 999;
+          pointer-events: none;
+          border-radius: inherit;
+          background: #000;
+          opacity: 0;
+          transition: opacity 0.2s;";
+        `
         video.onerror = () => cleanup();
         video.oncanplay = () => {
           video.style.opacity = "1";
-          video.play().catch(() => {});
         };
-
-        video.src = videoUrl;
         container.appendChild(video);
+        setTimeout(() => {
+          if (!card._hasPreview) return;
+
+          const needsEncoding = /[а-яё]/i.test(videoUrl) && !videoUrl.includes('%');
+          video.src = needsEncoding ? encodeURI(videoUrl) : videoUrl;
+          video.load();
+          video.play().catch(() => { });
+        }, 0);
+
       }, 150);
     };
 
