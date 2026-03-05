@@ -2,7 +2,7 @@
 EbloTweak (Дополнительные настройки для Eblo.id)
 
 ![Версия](https://img.shields.io/github/v/release/busjr/EbloTweak?style=for-the-badge&color=blue&cache=1234)
-![Скачиваний](https://img.shields.io/github/downloads/busjr/EbloTweak/total?style=for-the-badge&color=green&cache=123)
+![Скачиваний](https://img.shields.io/github/downloads/busjr/EbloTweak/total?style=for-the-badge&color=green&cache=1234)
 
 ## Использование
 
