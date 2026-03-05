@@ -205,7 +205,15 @@ const AppModules = {
         position: fixed;
         bottom: 20px;
         left: 50%;
+        width: 45px;
+        height: 45px;
         display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(20, 20, 20, 0.7);
+        color: white;
+        border-radius: 50%;
+        cursor: pointer;
         opacity: 0;
         visibility: hidden;
         transition: .3s;
@@ -214,6 +222,9 @@ const AppModules = {
       .ext-scroll-top-btn.show {
         opacity: 1;
         visibility: visible;
+      }
+      .ext-scroll-top-btn svg {
+        display: block;
       }
     `;
       document.head.appendChild(style);
