@@ -8,15 +8,11 @@
   const API = getApi();
 
   const ensureDefaults = () => {
-    if (typeof DEFAULTS === "undefined") {
-      window.DEFAULTS = { theme: { enabled: false, bgColor: "#202020", bgImage: "" } };
-    }
-    if (!DEFAULTS.theme) DEFAULTS.theme = { enabled: false, bgColor: "#202020", bgImage: "" };
-    if (!DEFAULTS.previews) DEFAULTS.previews = { enabled: false };
-    if (!DEFAULTS.scroll) DEFAULTS.scroll = { enabled: false };
-    if (!("accentColor" in DEFAULTS.theme)) DEFAULTS.theme.accentColor = "#789d2a";
-    if (!("gradientEnabled" in DEFAULTS.theme)) DEFAULTS.theme.gradientEnabled = false;
-    if (!("gradientColor" in DEFAULTS.theme)) DEFAULTS.theme.gradientColor = "#4a4a4a";
+    if (typeof DEFAULTS === "undefined") { return; }
+
+    if (!DEFAULTS.theme) DEFAULTS.theme = {};
+    if (!DEFAULTS.previews) DEFAULTS.previews = {};
+    if (!DEFAULTS.scroll) DEFAULTS.scroll = {};
   };
 
   ensureDefaults();
