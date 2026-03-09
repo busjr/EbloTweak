@@ -68,6 +68,16 @@ window.buildCustomSettingsUI = (state, onSave) => {
               <span class="settings-toggle-slider"></span>
           </label>
       </div>
+      <div class="settings-row">
+          <div class="settings-row-info">
+              <span class="settings-row-label">Счетчик символов</span>
+              <div class="settings-row-desc">Показывать количество знаков в постах</div>
+          </div>
+          <label class="settings-toggle">
+              <input type="checkbox" id="ext-char-switch">
+              <span class="settings-toggle-slider"></span>
+          </label>
+      </div>
       <button id="ext-reset-all" style="width:100%; margin-top:8px; padding:10px;">
           Сбросить дополнительные настройки
       </button>`;
@@ -78,6 +88,7 @@ window.buildCustomSettingsUI = (state, onSave) => {
     swTheme: document.getElementById("ext-master-switch"), 
     swVideo: document.getElementById("ext-preview-switch"), 
     swScroll: document.getElementById("ext-scroll-switch"),
+    swChar: document.getElementById("ext-char-switch"),
     group: document.getElementById("ext-controls-group"), 
     col: document.getElementById("ext-color"), 
     accent: document.getElementById("ext-accent"),
@@ -95,6 +106,7 @@ window.buildCustomSettingsUI = (state, onSave) => {
   ui.swTheme.checked = !!state.theme.enabled;
   ui.swVideo.checked = !!state.previews.enabled;
   ui.swScroll.checked = !!state.scroll.enabled;
+  ui.swChar.checked = !!state.charCounter.enabled;
   ui.col.value = state.theme.bgColor;
   ui.accent.value = state.theme.accentColor;
   ui.swGrad.checked = !!state.theme.gradientEnabled;
@@ -114,7 +126,8 @@ window.buildCustomSettingsUI = (state, onSave) => {
         gradientColor: ui.gradColor.value 
       },
       previews: { enabled: ui.swVideo.checked },
-      scroll: { enabled: ui.swScroll.checked }
+      scroll: { enabled: ui.swScroll.checked },
+      charCounter: { enabled: ui.swChar.checked }
     });
   };
 

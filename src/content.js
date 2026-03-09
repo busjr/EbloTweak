@@ -4,11 +4,14 @@ const apply = (res) => {
   const data = {
     theme: { ...DEFAULTS.theme, ...(res.theme || {}) },
     previews: { ...DEFAULTS.previews, ...(res.previews || {}) },
-    scroll: { ...DEFAULTS.scroll, ...(res.scroll || {}) }
+    scroll: { ...DEFAULTS.scroll, ...(res.scroll || {}) },
+    charCounter: { ...DEFAULTS.charCounter, ...(res.charCounter || {}) }
   };
   AppModules.applyTheme(data.theme);
   AppModules.initVideoPreviews(data.previews.enabled);
   AppModules.initScrollTop(data.scroll.enabled);
+  AppModules.initCharCounter(data.charCounter.enabled);
+  
   return data;
 };
 
