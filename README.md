@@ -31,10 +31,12 @@ EbloTweak (Дополнительные настройки для Eblo.id)
 - Нажмите на шестеренку и выберите "Установить дополнение из файла..."
 - Выберите заранее упакованный [архив](https://github.com/busjr/EbloTweak/releases) (xpi) расширения
 
-# Авторы
+## Авторы
 - [busjr](https://github.com/busjr)
 - [X1kkan](https://github.com/X1kkan)
 <a href="https://github.com/busjr/EbloTweak/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=busjr/EbloTweak" />
 </a>
 
+## Лицензия
+MIT
