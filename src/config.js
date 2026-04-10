@@ -11,6 +11,5 @@ const DEFAULTS = {
         gradientColor: "#4a4a4a"
     },
     previews: { enabled: false },
-    scroll: { enabled: false },
     charCounter: { enabled: false }
 };

@@ -33,7 +33,6 @@
                 "modules/color.js",
                 "modules/theme.js",
                 "modules/videoPreviews.js",
-                "modules/scrollTop.js",
                 "modules/charCounter.js",
                 "ui.js",
                 "content.js"
