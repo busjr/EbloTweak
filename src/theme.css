@@ -607,3 +607,14 @@
 :root.ext-enabled .stat-value-muted{
   color: var(--ext-muted) !important;
 }
+
+.ext-mute-btn {
+  position: absolute !important;
+  bottom: 8px !important;
+  right: 8px !important;
+  left: auto !important;
+
+  opacity: 0.9 !important;
+  pointer-events: auto !important;
+  transform: none !important;
+}

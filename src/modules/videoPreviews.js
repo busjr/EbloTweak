@@ -18,12 +18,14 @@ window.AppModules.initVideoPreviews = (enabled) => {
     const cleanup = () => {
       clearTimeout(card._previewTimeout);
       const video = card.querySelector(".ext-preview-video");
+      const muteBtn = card.querySelector(".ext-mute-btn");
       if (video) {
         video.pause();
         video.removeAttribute('src');
         video.load();
         video.remove();
       }
+      if (muteBtn) muteBtn.remove();
       card._hasPreview = false;
       card.removeEventListener("mouseleave", cleanup);
     };
@@ -39,10 +41,9 @@ window.AppModules.initVideoPreviews = (enabled) => {
       if (!container) return;
 
       const video = document.createElement("video");
-      video.muted = video.defaultMuted = true;
+      video.muted = true;
       video.loop = true;
       video.playsInline = true;
-      video.preload = "none";
       video.className = "ext-preview-video";
       video.style.cssText = `
           position: absolute;
@@ -51,24 +52,42 @@ window.AppModules.initVideoPreviews = (enabled) => {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          z-index: 999;
+          z-index: 998;
           pointer-events: none;
           border-radius: inherit;
           background: #000;
           opacity: 0;
-          transition: opacity 0.2s;";
+          transition: opacity 0.2s;
         `;
+
+      const muteBtn = document.createElement("div");
+      muteBtn.className = "scroll-top-btn ext-mute-btn";
+      muteBtn.innerHTML = `<img src="https://img.icons8.com/pixels/32/mute.png">`;
+
+      muteBtn.onclick = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        video.muted = !video.muted;
+        muteBtn.innerHTML = video.muted
+          ? `<img src="https://img.icons8.com/pixels/32/mute.png">`
+          : `<img src="https://img.icons8.com/pixels/32/medium-volume.png">`;
+        muteBtn.style.transform = "scale(1.2)";
+        setTimeout(() => muteBtn.style.transform = "scale(1)", 100);
+      };
+
       video.onerror = () => cleanup();
       video.oncanplay = () => {
         video.style.opacity = "1";
       };
+
+      container.style.position = "relative";
       container.appendChild(video);
+      container.appendChild(muteBtn);
+
       setTimeout(() => {
         if (!card._hasPreview) return;
-
         const needsEncoding = /[а-яё]/i.test(videoUrl) && !videoUrl.includes('%');
         video.src = needsEncoding ? encodeURI(videoUrl) : videoUrl;
-        video.load();
         video.play().catch(() => { });
       }, 0);
 
@@ -77,4 +96,3 @@ window.AppModules.initVideoPreviews = (enabled) => {
 
   document.addEventListener("mouseover", window._extEnter, true);
 };
-
